@@ -63,11 +63,12 @@
                 <input
                     value={this.state.currentValue}
                     onChange={this.textChange}
-                    onkeyDown={this.textKeyDown} />
+                    onKeyDown={this.textKeyDown} />
                 <button onClick={this.buttonClick}>추가!</button>
                 <div>
                     {this.state.todos.map((todo) => {
                         return <TodoItem
+                        key={todo.key} //이 부분에서 dataKey를 key로 변경
                         dataKey={todo.key}
                         isDone={todo.isDone}
                         text={todo.text}
